@@ -11,6 +11,9 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use PHPUnit\Logging\TestDox\PlainTextRenderer;
+use Symfony\Component\Console\Input\InputOption;
+use Filament\Forms\Components\Textarea;
 
 class MemberRelationManager extends RelationManager
 {
@@ -30,10 +33,10 @@ class MemberRelationManager extends RelationManager
                     ->maxLength(255),
                 TextInput::make('region')
                     ->required()
-                    ->maxLength(255),
-                TextInput::make('dagree')
-                    ->required()
-                    ->maxLength(255),
+                    ->maxLength(30),
+                TextArea::make('dagree')
+                    ->rows(10)
+                    ->columns(25),
                 TextInput::make('updated_at')
                     ->required()
                     ->maxLength(255),

@@ -46,9 +46,9 @@ class User extends Authenticatable implements FilamentUser
         'email_verified_at' => 'datetime',
     ];
 
-    // protected $appends = [
-    //     'profile_photo_url'
-    // ];
+    protected $appends = [
+        'profile_photo_url'
+    ];
 
     public function canAccessFilament(): bool
     {
