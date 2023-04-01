@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->default(1);
-            $table->unsignedBigInteger('team_id')->default(1);
+            $table->foreignId('team_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('nickname');
             $table->string('birth_date');
             $table->string('region');
